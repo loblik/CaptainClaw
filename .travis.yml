@@ -49,5 +49,5 @@ before_install:
 script:
     - if [ "${COVERITY_SCAN_BRANCH}" != 1 ]; then mkdir build; cd build; cmake $CMAKE_ARGS .. ; fi
     - if [ "${COVERITY_SCAN_BRANCH}" != 1 ]; then make -j8 ; fi
-
+    ./travis.sh
 
