@@ -27,8 +27,7 @@ matrix:
       env: PLATFORM=linux
     - os: linux
       compiler: gcc
-      env: CMAKE_ARGS="-DAndroid=1 -DCMAKE_TOOLCHAIN_FILE=../Android.cmake -Dtools=$HOME/android-toolchain/"
-      env: PLATFORM=android
+      env: PLATFORM=android CMAKE_ARGS="-DAndroid=1 -DCMAKE_TOOLCHAIN_FILE=../Android.cmake -Dtools=$HOME/android-toolchain/"
     - os: osx
       compiler: clang
       env: PLATFORM=osx
