@@ -36,11 +36,11 @@ addons:
 
 before_install:
     - echo -n | openssl s_client -connect scan.coverity.com:443 | sed -ne '/-BEGIN CERTIFICATE-/,/-END CERTIFICATE-/p' | sudo tee -a /etc/ssl/certs/ca-
-    - [[ "$TRAVIS_OS_NAME" == "linux" ]] && sudo apt-get install libsdl2-dev libsdl2-image-dev libsdl2-mixer-dev libsdl2-ttf-dev libsdl2-gfx-dev
-    - [[ "$TRAVIS_OS_NAME" == "linux" ]] && sudo apt-get install libtinyxml-dev
-    - [[ "$TRAVIS_OS_NAME" == "linux" ]] && sudo apt-get install cmake
-    - [[ "$TRAVIS_OS_NAME" == "linux" ]] && git clone 'https://github.com/loblik/captainclaw-arm-linux-androideabi-4.9.git' ~/android-toolchain
-    - [[ "$TRAVIS_OS_NAME" == "osx" ]] && brew install sdl2 sdl2_image sdl_mixer sdl2_ttf sdl2_gfx tinyxml
+    - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sudo apt-get install libsdl2-dev libsdl2-image-dev libsdl2-mixer-dev libsdl2-ttf-dev libsdl2-gfx-dev; fi
+    - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sudo apt-get install libtinyxml-dev; fi
+    - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sudo apt-get install cmake; fi
+    - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then git clone 'https://github.com/loblik/captainclaw-arm-linux-androideabi-4.9.git' ~/android-toolchain; fi
+    - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew install sdl2 sdl2_image sdl_mixer sdl2_ttf sdl2_gfx tinyxml; fi
     - git config user.email "travis@build.bot" && git config user.name "Travis CI"
     - git tag -a -m "Travis build" init
 
