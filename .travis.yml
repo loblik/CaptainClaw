@@ -40,7 +40,7 @@ before_install:
     - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sudo apt-get install libtinyxml-dev; fi
     - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sudo apt-get install cmake; fi
     - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then git clone 'https://github.com/loblik/captainclaw-arm-linux-androideabi-4.9.git' ~/android-toolchain; fi
-    - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew install sdl2 sdl2_image sdl_mixer sdl2_ttf sdl2_gfx tinyxml; fi
+    - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew install sdl2 sdl2_image sdl2_mixer sdl2_ttf sdl2_gfx tinyxml; fi
     - git config user.email "travis@build.bot" && git config user.name "Travis CI"
     - git tag -a -m "Travis build" init
 
