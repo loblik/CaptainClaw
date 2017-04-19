@@ -1,7 +1,7 @@
 set(CMAKE_SYSTEM_NAME Linux)
 set(CMAKE_SYSTEM_PROCESSOR arm)
 
-set(tools ~/captainclaw-arm-linux-androideabi-4.9)
+set(tools ~/android-toolchain)
 #set(CMAKE_STAGING_PREFIX stage)
 
 set(CMAKE_C_COMPILER ${tools}/bin/arm-linux-androideabi-gcc)
