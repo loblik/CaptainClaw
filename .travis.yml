@@ -15,11 +15,12 @@ env:
 matrix:
   include:
     - os: linux
-      env: CMAKE_ARGS="-DAndroid=1 -DCMAKE_TOOLCHAIN_FILE=../Android.cmake -Dtools=$HOME/android-toolchain/"
+      compiler: clang
+    - os: linux
       compiler: gcc
     - os: linux
-      env: CMAKE_ARGS=
-      compiler: clang
+      compiler: gcc
+      env: CMAKE_ARGS="-DAndroid=1 -DCMAKE_TOOLCHAIN_FILE=../Android.cmake -Dtools=$HOME/android-toolchain/"
 
 addons:
   coverity_scan:
