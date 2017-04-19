@@ -34,6 +34,8 @@ before_install:
     - sudo apt-get install cmake
     - git clone 'https://github.com/loblik/captainclaw-arm-linux-androideabi-4.9.git'
     - ln -s captainclaw-arm-linux-androideabi-4.9.git android-toolchain
+    - pwd
+    - ls
     - git config user.email "travis@build.bot" && git config user.name "Travis CI"
     - git tag -a -m "Travis build" init
 
